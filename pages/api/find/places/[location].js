@@ -1,18 +1,38 @@
-import main from '../../../Utility/scraper';
+import { PrismaClient } from '@prisma/client'
 const axios = require('axios')
 const { ApifyClient } = require('apify-client');
 const client = new ApifyClient({
     token: process.env.APIFY_API_ID,
 });
+const prisma = new PrismaClient()
 
 export default async function handler(req, res) {
     const { location } = req.query
+    const getPlace = await prisma.places.findMany({
+        where: {
+            name: {
+                contains: location,
+            },
+        }
+    })
     try {
-        const data = await getDetails(location);
-        res.json(data)
+        if (getPlace) {
+            res.json(getPlace[0].data)
+        }
+        else {
+            const data = await getDetails(location);
+            const entry = await prisma.places.create({
+                data: {
+                    name: location,
+                    data: data
+                },
+            })
+            res.json(data)
+        }
     }
     catch (err) {
         console.log(err)
+        res.json({})
     }
 }
 const getDetails = async (location) => {
