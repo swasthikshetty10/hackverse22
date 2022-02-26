@@ -57,3 +57,9 @@ model VerificationToken {
 
   @@unique([identifier, token])
 }
+
+model Places {
+  id   String  @id @default(cuid())
+  name String? @unique
+  data Json
+}
