@@ -12,7 +12,7 @@ function DashboardIndex() {
                </h1>
                <div className="mt-5 flex items-center justify-center">
                   <div className="flex border-2 rounded">
-                     <input type="text" className="px-4 py-2 w-96" placeholder="Try 'Udupi'" />
+                     <input type="text" className="px-4 py-2 md:w-96 w-44" placeholder="Try 'Udupi'" />
                      <button className="flex items-center justify-center px-4 border-l">
                         <svg className="w-6 h-6 text-white-600" fill="white" xmlns="http://www.w3.org/2000/svg"
                            viewBox="0 0 24 24">
