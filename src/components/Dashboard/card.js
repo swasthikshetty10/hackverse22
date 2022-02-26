@@ -1,9 +1,11 @@
 import React from 'react'
+import {Fade} from 'react-awesome-reveal'
 
 function Card({ name, loc, img }) {
     console.log(img)
     return (
         <>
+        <Fade cascade>
             <div class="w-full max-w-sm  md:mx-2 mb-4 md:mb-0">
                 <div class="bg-white rounded-lg overflow-hidden shadow relative">{
 
@@ -22,6 +24,7 @@ function Card({ name, loc, img }) {
                     </div>
                 </div>
             </div>
+            </Fade>
         </>
     )
 }

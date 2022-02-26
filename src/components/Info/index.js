@@ -9,6 +9,7 @@ function Information() {
 
         {/* Location Info */}
         <section className="text-gray-600 body-font">
+        <Fade>
          <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
             <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
                <Image
@@ -27,12 +28,14 @@ function Information() {
                </div>
             </div>
          </div>
+         </Fade>
 
          <div className="p-2 w-full pt-8 mt-8 border-t bordet-gray-200 text-center"></div>     
       </section>
 
     {/* Hotels Nearby Cards */}
       <h3 className="text-center text-4xl font-normal leading-normal mt-0 mb-2 text-gray-800">Hotels Nearby</h3>
+      <Fade>
         <div className="container my-12 mx-auto px-4 md:px-12">
         <div className="flex flex-wrap -mx-1 lg:-mx-4">
     
@@ -62,6 +65,7 @@ function Information() {
     
         </div>
         </div>
+        </Fade>
         {/* Pagination */}
         <nav className="text-center mb-5">
         <ul className="inline-flex -space-x-px mb-5">
@@ -87,6 +91,7 @@ function Information() {
 
     {/* Airports Nearby Cards */}
         <h3 className="text-center text-4xl font-normal leading-normal mt-0 mb-2 text-gray-800">Airports Nearby</h3>
+        <Fade>
         <div className="container my-12 mx-auto px-4 md:px-12">
         <div className="flex flex-wrap -mx-1 lg:-mx-4">
         <Card 
@@ -115,6 +120,7 @@ function Information() {
     
         </div>
         </div>
+        </Fade>
 
         {/* Pagination */}
         <nav className="text-center mb-5">
