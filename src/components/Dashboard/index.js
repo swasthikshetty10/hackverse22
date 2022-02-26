@@ -49,9 +49,10 @@ function DashboardIndex() {
          <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center"></div>
       </section>
 
-      <div className="min-h-screen p-3 relative">
-         <h1 className="text-center title-font sm:text-4xl text-3xl font-medium text-gray-900">Nearby Tourist Attractions</h1>
-         <div className="w-96 mx-auto">
+      <h1 className="mb-14 text-center title-font sm:text-4xl text-3xl font-medium text-gray-900">Nearby Tourist Attractions</h1>
+      <div className="mb-14 h-96 p-3 relative">
+
+         <div className="mt-96 w-96 mx-auto">
 
             <div className="">
                <input className="sr-only peer" type="radio" name="carousel" id="carousel-1" checked />
@@ -63,7 +64,7 @@ function DashboardIndex() {
                      </h1>
                      <p className="hover:cursor-pointer py-3 text-gray-600 leading-6">Location.
                      </p>
-                     <a href="/"><button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">View Budget</button></a>
+                     <a href="/info"><button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">View Budget</button></a>
                   </div>
                   <div className="absolute top-1/2 w-full flex justify-between z-20">
                      <label for="carousel-3" className="inline-block text-red-600 cursor-pointer -translate-x-5 bg-white rounded-full shadow-md active:translate-y-0.5">
@@ -91,7 +92,7 @@ function DashboardIndex() {
                      </h1>
                      <p className="hover:cursor-pointer py-3 text-gray-600 leading-6">Location.
                      </p>
-                     <a href="/"><button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">View Budget</button></a>
+                     <a href="/info"><button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">View Budget</button></a>
                   </div>
                   <div className="absolute top-1/2 w-full flex justify-between z-20">
                      <label for="carousel-1" className="inline-block text-blue-600 cursor-pointer -translate-x-5 bg-white rounded-full shadow-md active:translate-y-0.5">
@@ -119,7 +120,7 @@ function DashboardIndex() {
                      </h1>
                      <p className="hover:cursor-pointer py-3 text-gray-600 leading-6">Location.
                      </p>
-                     <a href="/"><button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">View Budget</button></a>
+                     <a href="/info"><button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">View Budget</button></a>
                   </div>
                   <div className="absolute top-1/2 w-full flex justify-between z-20">
                      <label for="carousel-2" className="inline-block text-yellow-600 cursor-pointer -translate-x-5 bg-white rounded-full shadow-md active:translate-y-0.5">
