@@ -40,81 +40,70 @@ function DashboardIndex() {
       </header>
 
       {/* Place Info */}
-      <section className="text-gray-600 body-font">
-         <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-            <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
-               <Image
-                  src={place}
-                  className="object-cover object-center rounded"
-                  alt="Picture of the author"
-                  width="500px"
-                  height="350px"
-               />
-            </div>
-            <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-               <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Place Name
-               </h1>
-               <p className="mb-8 leading-relaxed">Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.</p>
-               <div className="flex justify-center">
+      {places.length && <div>
+         {/* <section className="text-gray-600 body-font">
+            <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+               <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+                  <Image
+                     src={place}
+                     className="object-cover object-center rounded"
+                     alt="Picture of the author"
+                     width="500px"
+                     height="350px"
+                  />
+               </div>
+               <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+                  <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Place Name
+                  </h1>
+                  <p className="mb-8 leading-relaxed">Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.</p>
+                  <div className="flex justify-center">
+                  </div>
                </div>
             </div>
-         </div>
 
-         <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center"></div>
-      </section>
+            <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center"></div>
+         </section> */}
 
-      {/* Nearby Places Cards */}
-      <h1 className="mb-14 text-center title-font sm:text-4xl text-3xl font-medium text-gray-900">Nearby Tourist Attractions</h1>
-      <main class="py-4">
-         <div class="flex justify-center ">
-            <div class="grid md items-center gap-6  justify-center grid-cols-3 ">
-               {loading ? <span>loading</span> : places.map((item) => <div key={item.cid}>
-                  <Card
-                     name={item.title}
-                     loc={item.address}
-                     img={item.imageUrls}
-                  />
-               </div>)}
+         {/* Nearby Places Cards */}
+         <h1 className="my-14 text-center title-font sm:text-4xl text-3xl font-medium text-gray-900">Nearby Tourist Attractions</h1>
+         <main class="py-4">
+            <div class="flex justify-center ">
+               <div class="grid md items-center gap-6  justify-center grid-cols-3 ">
+                  {loading ? <span>loading</span> : places.map((item) => <div key={item.cid}>
+                     <Card
+                        name={item.title}
+                        loc={item.address}
+                        img={item.imageUrls}
+                     />
+                  </div>)}
 
-               <Card
-                  name="Tourist Place Name"
-                  loc="Tourism Place location"
-                  img="https://images.unsplash.com/photo-1457282367193-e3b79e38f207?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1654&q=80"
-               />
-               <Card
-                  name="Tourist Place Name"
-                  loc="Tourism Place location"
-                  img="https://images.unsplash.com/photo-1457282367193-e3b79e38f207?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1654&q=80"
-               />
-               <Card
-                  name="Tourist Place Name"
-                  loc="Tourism Place location"
-                  img="https://images.unsplash.com/photo-1457282367193-e3b79e38f207?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1654&q=80"
-               />
+
+               </div>
             </div>
-         </div>
-      </main>
-
+         </main>
+         <nav className="text-center mt-5 mb-5">
+            <ul className="inline-flex -space-x-px mb-5">
+               <li>
+                  <a href="#" className="py-2 px-3 ml-0 leading-tight text-white-500 bg-white rounded-l-lg border bordet-white-300 hover:bt-gray-800 hover:text-gray-500">Previous</a>
+               </li>
+               <li>
+                  <a href="#" className="py-2 px-3 leading-tight text-white-500 bg-white border bordet-white-300 hover:bt-gray-800 hover:text-gray-500">1</a>
+               </li>
+               <li>
+                  <a href="#" className="py-2 px-3 leading-tight text-white-500 bg-white border bordet-white-300 hover:bt-gray-800 hover:text-gray-500">2</a>
+               </li>
+               <li>
+                  <a href="#" className="py-2 px-3 leading-tight text-white-500 bg-white border bordet-white-300 hover:bt-gray-800 hover:text-gray-500">3</a>
+               </li>
+               <li>
+                  <a href="#" className="py-2 px-3 leading-tight text-white-500 bg-white rounded-r-lg border bordet-white-300 hover:bt-gray-800 hover:text-gray-500">Next</a>
+               </li>
+            </ul>
+         </nav>
+      </div>
+      }
       {/* Pagination */}
-      <nav className="text-center mt-5 mb-5">
-         <ul className="inline-flex -space-x-px mb-5">
-            <li>
-               <a href="#" className="py-2 px-3 ml-0 leading-tight text-white-500 bg-white rounded-l-lg border bordet-white-300 hover:bt-gray-800 hover:text-gray-500">Previous</a>
-            </li>
-            <li>
-               <a href="#" className="py-2 px-3 leading-tight text-white-500 bg-white border bordet-white-300 hover:bt-gray-800 hover:text-gray-500">1</a>
-            </li>
-            <li>
-               <a href="#" className="py-2 px-3 leading-tight text-white-500 bg-white border bordet-white-300 hover:bt-gray-800 hover:text-gray-500">2</a>
-            </li>
-            <li>
-               <a href="#" className="py-2 px-3 leading-tight text-white-500 bg-white border bordet-white-300 hover:bt-gray-800 hover:text-gray-500">3</a>
-            </li>
-            <li>
-               <a href="#" className="py-2 px-3 leading-tight text-white-500 bg-white rounded-r-lg border bordet-white-300 hover:bt-gray-800 hover:text-gray-500">Next</a>
-            </li>
-         </ul>
-      </nav>
+
    </>
 }
 
