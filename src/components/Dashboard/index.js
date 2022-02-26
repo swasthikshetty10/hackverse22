@@ -1,10 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import place from '../../../public/place.jpeg'
 import Card from './card';
 import { Fade, Slide } from "react-awesome-reveal";
+import axios from 'axios';
 
 function DashboardIndex() {
+   const [location, setLocation] = useState("");
+   const [loading, setLoading] = useState(false);
+   const [places, setPlaces] = useState([]);
+   const handleQuery = async () => {
+      setLoading(true);
+      const { data } = await axios.get(`/api/find/places/${location}`)
+      setPlaces(data);
+      console.log(places)
+      setLoading(false)
+   }
    return <>
       {/* Dashboard Search Bar */}
       <header id="up" className="bg-center bg-fixed bg-no-repeat bg-center bg-cover h-screen relative" style={{ background: "url('https://images.pexels.com/photos/1730403/pexels-photo-1730403.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" }}>
@@ -20,8 +31,8 @@ function DashboardIndex() {
                <Fade>
                <div className="mt-5 flex items-center justify-center">
                   <div className="flex border-2 rounded">
-                     <input type="text" className="px-4 py-2 md:w-96 w-44" placeholder="Try 'Udupi'" />
-                     <button className="flex items-center justify-center px-4 border-l">
+                     <input onChange={(e) => { setLocation(e.target.value) }} value={location} type="text" className="px-4 py-2 md:w-96 w-44" placeholder="Try 'Udupi'" />
+                     <button onClick={handleQuery} className="flex items-center justify-center px-4 border-l">
                         <svg className="w-6 h-6 text-white-600" fill="white" xmlns="http://www.w3.org/2000/svg"
                            viewBox="0 0 24 24">
                            <path
@@ -65,49 +76,55 @@ function DashboardIndex() {
       {/* Nearby Places Cards */}
       <h1 className="mb-14 text-center title-font sm:text-4xl text-3xl font-medium text-gray-900">Nearby Tourist Attractions</h1>
       <main class="py-4">
-      <div class="px-4">
-         <Fade cascade>
-         <div class="block md:flex justify-between md:-mx-2">
-         <Card
-                name="Tourist Place Name"
-                loc="Tourism Place location"
-                img="https://images.unsplash.com/photo-1457282367193-e3b79e38f207?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1654&q=80"
-         />
-         <Card
-                name="Tourist Place Name"
-                loc="Tourism Place location"
-                img="https://images.unsplash.com/photo-1457282367193-e3b79e38f207?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1654&q=80"
-         />
-         <Card
-                name="Tourist Place Name"
-                loc="Tourism Place location"
-                img="https://images.unsplash.com/photo-1457282367193-e3b79e38f207?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1654&q=80"
-         />
+         <div class="flex justify-center ">
+            <div class="grid md items-center gap-6  justify-center grid-cols-3 ">
+               {loading ? <span>loading</span> : places.map((item) => <div key={item.cid}>
+                  <Card
+                     name={item.title}
+                     loc={item.address}
+                     img={item.imageUrls}
+                  />
+               </div>)}
+
+               <Card
+                  name="Tourist Place Name"
+                  loc="Tourism Place location"
+                  img="https://images.unsplash.com/photo-1457282367193-e3b79e38f207?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1654&q=80"
+               />
+               <Card
+                  name="Tourist Place Name"
+                  loc="Tourism Place location"
+                  img="https://images.unsplash.com/photo-1457282367193-e3b79e38f207?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1654&q=80"
+               />
+               <Card
+                  name="Tourist Place Name"
+                  loc="Tourism Place location"
+                  img="https://images.unsplash.com/photo-1457282367193-e3b79e38f207?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1654&q=80"
+               />
+            </div>
          </div>
-         </Fade>
-      </div>
       </main>
 
       {/* Pagination */}
       <nav className="text-center mt-5 mb-5">
-        <ul className="inline-flex -space-x-px mb-5">
-        <li>
-        <a href="#" className="py-2 px-3 ml-0 leading-tight text-white-500 bg-white rounded-l-lg border bordet-white-300 hover:bt-gray-800 hover:text-gray-500">Previous</a>
-        </li>
-        <li>
-        <a href="#" className="py-2 px-3 leading-tight text-white-500 bg-white border bordet-white-300 hover:bt-gray-800 hover:text-gray-500">1</a>
-        </li>
-        <li>
-        <a href="#" className="py-2 px-3 leading-tight text-white-500 bg-white border bordet-white-300 hover:bt-gray-800 hover:text-gray-500">2</a>
-        </li>
-        <li>
-        <a href="#" className="py-2 px-3 leading-tight text-white-500 bg-white border bordet-white-300 hover:bt-gray-800 hover:text-gray-500">3</a>
-        </li>
-        <li>
-        <a href="#" className="py-2 px-3 leading-tight text-white-500 bg-white rounded-r-lg border bordet-white-300 hover:bt-gray-800 hover:text-gray-500">Next</a>
-        </li>
-        </ul>
-        </nav>
+         <ul className="inline-flex -space-x-px mb-5">
+            <li>
+               <a href="#" className="py-2 px-3 ml-0 leading-tight text-white-500 bg-white rounded-l-lg border bordet-white-300 hover:bt-gray-800 hover:text-gray-500">Previous</a>
+            </li>
+            <li>
+               <a href="#" className="py-2 px-3 leading-tight text-white-500 bg-white border bordet-white-300 hover:bt-gray-800 hover:text-gray-500">1</a>
+            </li>
+            <li>
+               <a href="#" className="py-2 px-3 leading-tight text-white-500 bg-white border bordet-white-300 hover:bt-gray-800 hover:text-gray-500">2</a>
+            </li>
+            <li>
+               <a href="#" className="py-2 px-3 leading-tight text-white-500 bg-white border bordet-white-300 hover:bt-gray-800 hover:text-gray-500">3</a>
+            </li>
+            <li>
+               <a href="#" className="py-2 px-3 leading-tight text-white-500 bg-white rounded-r-lg border bordet-white-300 hover:bt-gray-800 hover:text-gray-500">Next</a>
+            </li>
+         </ul>
+      </nav>
    </>
 }
 
