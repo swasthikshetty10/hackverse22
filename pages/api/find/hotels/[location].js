@@ -14,7 +14,7 @@ export default async function handler(req, res) {
     }
     catch (err) {
         console.log(err)
-        res.json({})
+        res.json([])
     }
 }
 const getHotels = async (location) => {
