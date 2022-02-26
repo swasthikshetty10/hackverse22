@@ -4,7 +4,7 @@ import React from 'react'
 
 function LandingPage() {
     return (
-        <section className="text-gray-600 body-font">
+        <section className="text-gray-600 body-font h-screen md:mt-24">
             <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
                 <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
                     <div className="text-center">
@@ -27,6 +27,7 @@ function LandingPage() {
                     </div>
                 </div>
             </div>
+        <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center"></div>
         </section>
     )
 }
