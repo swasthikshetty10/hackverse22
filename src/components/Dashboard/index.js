@@ -1,9 +1,11 @@
 import React from 'react'
 import Image from 'next/image'
 import place from '../../../public/place.jpeg'
+import Card from './card';
 
 function DashboardIndex() {
    return <>
+      {/* Dashboard Search Bar */}
       <header id="up" className="bg-center bg-fixed bg-no-repeat bg-center bg-cover h-screen relative" style={{ background: "url('https://images.pexels.com/photos/1730403/pexels-photo-1730403.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" }}>
          <div className="h-screen bg-opacity-50 bg-black flex items-center justify-center" style={{ background: "rgba(0,0,0,0.5)" }}>
             <div className="mx-2 text-center">
@@ -26,6 +28,7 @@ function DashboardIndex() {
          </div>
       </header>
 
+      {/* Place Info */}
       <section className="text-gray-600 body-font">
          <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
             <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
@@ -49,62 +52,31 @@ function DashboardIndex() {
          <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center"></div>
       </section>
 
+      {/* Nearby Places Cards */}
       <h1 className="mb-14 text-center title-font sm:text-4xl text-3xl font-medium text-gray-900">Nearby Tourist Attractions</h1>
       <main class="py-4">
       <div class="px-4">
          <div class="block md:flex justify-between md:-mx-2">
-            <div class="w-full lg:w-1/3 md:mx-2 mb-4 md:mb-0">
-            <div class="bg-white rounded-lg overflow-hidden shadow relative">
-               <img class="h-56 w-full object-cover object-center" src="https://images.unsplash.com/photo-1457282367193-e3b79e38f207?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1654&q=80" />
-               <div class="p-4 h-auto md:h-40 lg:h-48">
-                  <a href="#" class="block text-blue-500 hover:text-blue-600 font-semibold mb-2 text-lg md:text-base lg:text-lg">
-                  Tourist Place Name
-                  </a>
-                  <div class="text-gray-600 text-sm leading-relaxed block md:text-xs lg:text-sm">
-                  Tourism Place location
-                  </div>
-                  <a href="/info">
-                  <button className="inline-flex items-center bg-indigo-500 border-0 py-1 px-3 focus:outline-none hover:bg-indigo-600 rounded text-white mt-4">Estimate Budget</button>
-                  </a>
-               </div>
-            </div>
-            </div>
-            <div class="w-full lg:w-1/3 md:mx-2 mb-4 md:mb-0">
-            <div class="bg-white rounded-lg overflow-hidden shadow relative">
-               <img class="h-56 w-full object-cover object-center" src="https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" />
-               <div class="p-4 h-auto md:h-40 lg:h-48">
-                  <a href="#" class="block text-blue-500 hover:text-blue-600 font-semibold mb-2 text-lg md:text-base lg:text-lg">
-                  Tourist Place Name
-                  </a>
-                  <div class="text-gray-600 text-sm leading-relaxed block md:text-xs lg:text-sm">
-                  Tourism Place location
-                  </div>
-                  <a href="/info">
-                  <button className="inline-flex items-center bg-indigo-500 border-0 py-1 px-3 focus:outline-none hover:bg-indigo-600 rounded text-white mt-4 ">Estimate Budget</button>
-                  </a>
-               </div>
-            </div>
-            </div>
-            <div class="w-full lg:w-1/3 md:mx-2 mb-4 md:mb-0">
-            <div class="bg-white rounded-lg overflow-hidden shadow relative">
-               <img class="h-56 w-full object-cover object-center" src="https://images.unsplash.com/photo-1467238307002-480ffdd260f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" />
-               <div class="p-4 h-auto md:h-40 lg:h-48">
-                  <a href="#" class="block text-blue-500 hover:text-blue-600 font-semibold mb-2 text-lg md:text-base lg:text-lg">
-                  Tourist Place Name
-                  </a>
-                  <div class="text-gray-600 text-sm leading-relaxed block md:text-xs lg:text-sm">
-                  Tourism Place location
-                  </div>
-                  <a href="/info">
-                  <button className="inline-flex items-center bg-indigo-500 border-0 py-1 px-3 focus:outline-none hover:bg-indigo-600 rounded text-white mt-4 ">Estimate Budget</button>
-                  </a>
-               </div>
-            </div>
-            </div>
+         <Card
+                name="Tourist Place Name"
+                loc="Tourism Place location"
+                img="https://images.unsplash.com/photo-1457282367193-e3b79e38f207?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1654&q=80"
+         />
+         <Card
+                name="Tourist Place Name"
+                loc="Tourism Place location"
+                img="https://images.unsplash.com/photo-1457282367193-e3b79e38f207?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1654&q=80"
+         />
+         <Card
+                name="Tourist Place Name"
+                loc="Tourism Place location"
+                img="https://images.unsplash.com/photo-1457282367193-e3b79e38f207?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1654&q=80"
+         />
          </div>
       </div>
       </main>
 
+      {/* Pagination */}
       <nav className="text-center mt-5 mb-5">
         <ul className="inline-flex -space-x-px mb-5">
         <li>
@@ -117,13 +89,7 @@ function DashboardIndex() {
         <a href="#" className="py-2 px-3 leading-tight text-white-500 bg-white border bordet-white-300 hover:bt-gray-800 hover:text-gray-500">2</a>
         </li>
         <li>
-        <a href="#" aria-current="page" className="py-2 px-3 leading-tight text-white-500 bg-white border bordet-white-300 hover:bt-gray-800 hover:text-gray-500">3</a>
-        </li>
-        <li>
-        <a href="#" className="py-2 px-3 leading-tight text-white-500 bg-white border bordet-white-300 hover:bt-gray-800 hover:text-gray-500">4</a>
-        </li>
-        <li>
-        <a href="#" className="py-2 px-3 leading-tight text-white-500 bg-white border bordet-white-300 hover:bt-gray-800 hover:text-gray-500">5</a>
+        <a href="#" className="py-2 px-3 leading-tight text-white-500 bg-white border bordet-white-300 hover:bt-gray-800 hover:text-gray-500">3</a>
         </li>
         <li>
         <a href="#" className="py-2 px-3 leading-tight text-white-500 bg-white rounded-r-lg border bordet-white-300 hover:bt-gray-800 hover:text-gray-500">Next</a>

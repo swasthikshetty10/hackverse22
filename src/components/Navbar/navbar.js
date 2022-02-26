@@ -3,6 +3,7 @@ import { useSession, signIn, signOut } from "next-auth/react"
 function NavBar() {
     const { data: session } = useSession()
     if (session) {
+        {/* If User has logged in */}
         return <>
             <header className="text-gray-600 body-font">
                 <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -23,6 +24,7 @@ function NavBar() {
             </header>
         </>
     }
+    {/* If User is logged out/hasn't logged in yet */}
     return <>
         <header className="text-gray-600 body-font">
             <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
