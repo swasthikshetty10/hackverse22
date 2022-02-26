@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import place from '../../../public/place.jpeg'
 import Card from './card';
+import { Fade } from "react-awesome-reveal";
 
 function Information() {
     return <>
@@ -27,7 +28,7 @@ function Information() {
             </div>
          </div>
 
-         <div className="p-2 w-full pt-8 mt-8 border-t bordet-gray-200 text-center"></div>
+         <div className="p-2 w-full pt-8 mt-8 border-t bordet-gray-200 text-center"></div>     
       </section>
 
     {/* Hotels Nearby Cards */}
@@ -88,7 +89,6 @@ function Information() {
         <h3 className="text-center text-4xl font-normal leading-normal mt-0 mb-2 text-gray-800">Airports Nearby</h3>
         <div className="container my-12 mx-auto px-4 md:px-12">
         <div className="flex flex-wrap -mx-1 lg:-mx-4">
-    
         <Card 
                 name="Aiport Name"
                 maps="/"

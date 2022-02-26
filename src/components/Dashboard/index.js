@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import place from '../../../public/place.jpeg'
 import Card from './card';
+import { Fade, Slide } from "react-awesome-reveal";
 
 function DashboardIndex() {
    return <>
@@ -9,9 +10,14 @@ function DashboardIndex() {
       <header id="up" className="bg-center bg-fixed bg-no-repeat bg-center bg-cover h-screen relative" style={{ background: "url('https://images.pexels.com/photos/1730403/pexels-photo-1730403.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" }}>
          <div className="h-screen bg-opacity-50 bg-black flex items-center justify-center" style={{ background: "rgba(0,0,0,0.5)" }}>
             <div className="mx-2 text-center">
+            <Slide delay="0">
+               <Fade>
                <h1 className="text-gray-100 font-extrabold text-4xl xs:text-5xl md:text-6xl">
                   <span className="text-white">Search</span> any Place
                </h1>
+               </Fade></Slide>
+            <Slide delay="20">
+               <Fade>
                <div className="mt-5 flex items-center justify-center">
                   <div className="flex border-2 rounded">
                      <input type="text" className="px-4 py-2 md:w-96 w-44" placeholder="Try 'Udupi'" />
@@ -24,11 +30,14 @@ function DashboardIndex() {
                      </button>
                   </div>
                </div>
+               </Fade>
+            </Slide>
             </div>
          </div>
       </header>
 
       {/* Place Info */}
+      <Fade cascade>
       <section className="text-gray-600 body-font">
          <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
             <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
@@ -51,11 +60,13 @@ function DashboardIndex() {
 
          <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center"></div>
       </section>
+      </Fade>
 
       {/* Nearby Places Cards */}
       <h1 className="mb-14 text-center title-font sm:text-4xl text-3xl font-medium text-gray-900">Nearby Tourist Attractions</h1>
       <main class="py-4">
       <div class="px-4">
+         <Fade cascade>
          <div class="block md:flex justify-between md:-mx-2">
          <Card
                 name="Tourist Place Name"
@@ -73,6 +84,7 @@ function DashboardIndex() {
                 img="https://images.unsplash.com/photo-1457282367193-e3b79e38f207?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1654&q=80"
          />
          </div>
+         </Fade>
       </div>
       </main>
 
