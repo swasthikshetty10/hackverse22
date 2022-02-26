@@ -1,6 +1,4 @@
-import main from '../../../Utility/scraper';
 import { PrismaClient } from '@prisma/client'
-import { data } from 'autoprefixer';
 const axios = require('axios')
 const { ApifyClient } = require('apify-client');
 const client = new ApifyClient({
@@ -31,10 +29,10 @@ export default async function handler(req, res) {
             })
             res.json(data)
         }
-
     }
     catch (err) {
         console.log(err)
+        res.json({})
     }
 }
 const getDetails = async (location) => {
