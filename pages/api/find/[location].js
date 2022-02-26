@@ -1,15 +1,36 @@
 import main from '../../../Utility/scraper';
 const axios = require('axios')
-export default async function andler(req, res) {
+const { ApifyClient } = require('apify-client');
+const client = new ApifyClient({
+    token: process.env.APIFY_API_ID,
+});
+
+export default async function handler(req, res) {
     const { location } = req.query
     try {
-        const data = await getHotels(location);
+        const data = await getDetails(location);
         res.json(data)
     }
     catch (err) {
-        next(err)
+        console.log(err)
     }
-
+}
+const getDetails = async (location) => {
+    const input = {
+        "searchStringsArray": [
+            "tourist places near " + location
+        ],
+        "maxCrawledPlaces": 15,
+        "language": "en",
+        "maxImages": 3,
+        "maxReviews": 5,
+        "proxyConfig": {
+            "useApifyProxy": true
+        }
+    };
+    const run = await client.actor("drobnikj/crawler-google-places").call(input);
+    const { items } = await client.dataset(run.defaultDatasetId).listItems();
+    return items
 }
 
 
@@ -23,7 +44,6 @@ const getHotels = async (location) => {
             'x-rapidapi-key': process.env.RAPID_API_KEY
         }
     };
-
     const res = await axios.request(options)
     if (res.status == 200) {
         return res.data
