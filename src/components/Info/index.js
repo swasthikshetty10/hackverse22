@@ -65,44 +65,38 @@ function Information({ data }) {
                                                 price={[{ exist: 1, rate: "20000" }]}
                                         />
 
-                                </div>
-                        </div>
-                </Fade>
-                {/* Pagination */}
-                <nav className="text-center mb-5">
-                        <ul className="inline-flex -space-x-px mb-5">
-                                <li>
-                                        <a href="#" className="py-2 px-3 ml-0 leading-tight text-white-500 bg-white rounded-l-lg border bordet-white-300 hover:bt-gray-800 hover:text-gray-500">Previous</a>
-                                </li>
-                                <li>
-                                        <a href="#" className="py-2 px-3 leading-tight text-white-500 bg-white border bordet-white-300 hover:bt-gray-800 hover:text-gray-500">1</a>
-                                </li>
-                                <li>
-                                        <a href="#" className="py-2 px-3 leading-tight text-white-500 bg-white border bordet-white-300 hover:bt-gray-800 hover:text-gray-500">2</a>
-                                </li>
-                                <li>
-                                        <a href="#" aria-current="page" className="py-2 px-3 leading-tight text-white-500 bg-white border bordet-white-300 hover:bt-gray-800 hover:text-gray-500">3</a>
-                                </li>
-                                <li>
-                                        <a href="#" className="py-2 px-3 leading-tight text-white-500 bg-white rounded-r-lg border bordet-white-300 hover:bt-gray-800 hover:text-gray-500">Next</a>
-                                </li>
-                        </ul>
-                </nav>
+    {/* Airports Nearby Cards */}
+        <h3 className="text-center text-4xl font-normal leading-normal mt-0 mb-2 text-gray-800">Airports Nearby</h3>
+        <Fade>
+        <div className="container my-12 mx-auto px-4 md:px-12">
+        <div className="flex flex-wrap -mx-1 lg:-mx-4">
+        <Card 
+                name="Airport Name"
+                maps="/"
+                img="https://picsum.photos/600/400/?random"
+                ratings="5"
+                price={[{ exist: 0, rate: "" }]}
+        />
 
-                <div className="p-2 w-full pt-8 mt-8 border-t bordet-gray-200 text-center"></div>
+        <Card 
+                name="Airport Name"
+                maps="/"
+                img="https://picsum.photos/600/400/?random"
+                ratings="5"
+                price={[{ exist: 0, rate: "" }]}
+        />
 
-                {/* Airports Nearby Cards */}
-                <h3 className="text-center text-4xl font-normal leading-normal mt-0 mb-2 text-gray-800">Airports Nearby</h3>
-                <Fade>
-                        <div className="container my-12 mx-auto px-4 md:px-12">
-                                <div className="flex flex-wrap -mx-1 lg:-mx-4">
-                                        <Card
-                                                name="Aiport Name"
-                                                maps="/"
-                                                img="https://picsum.photos/600/400/?random"
-                                                ratings="5"
-                                                price={[{ exist: 0, rate: "" }]}
-                                        />
+        <Card 
+                name="Airport Name"
+                maps="/"
+                img="https://picsum.photos/600/400/?random"
+                ratings="5"
+                price={[{ exist: 0, rate: "" }]}
+        />
+    
+        </div>
+        </div>
+        </Fade>
 
                                         <Card
                                                 name="Aiport Name"
@@ -112,41 +106,93 @@ function Information({ data }) {
                                                 price={[{ exist: 0, rate: "" }]}
                                         />
 
-                                        <Card
-                                                name="Aiport Name"
-                                                maps="/"
-                                                img="https://picsum.photos/600/400/?random"
-                                                ratings="5"
-                                                price={[{ exist: 0, rate: "" }]}
-                                        />
+        {/* Estimated Budget */}
+        <div className="p-2 w-full pt-8 mt-8 border-t bordet-gray-200 text-center"></div>
+        <div className='flex items-center justify-center'>
+        <img alt="Placeholder" className="mb-2 text-center block rounded-full" src="https://cdn-icons-png.flaticon.com/512/3462/3462067.png" width="32" height="32" />
+        <h4 className="ml-2 text-center text-2xl font-normal leading-normal mt-0 mb-2 text-gray-800">Estimated Budget</h4>
+        </div>
+        {/* Cost Table */}
+        <div class="flex flex-col mb-14">
+        <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+        <div class="overflow-hidden">
+                <table class="min-w-full">
+                <thead class="bg-gray-200 border-b">
+                <tr>
+                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                        ID
+                </th>
+                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                        Selected Type
+                </th>
+                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                        Name
+                </th>
+                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                        Expense (₹)
+                </th>
+                </tr>
+                </thead>
 
-                                </div>
-                        </div>
-                </Fade>
+                <tbody>
+                <tr class="bg-white border-b">
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
+                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                        Hotel
+                </td>
+                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                        Ramesh Restaurant
+                </td>
+                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                ₹20000
+                </td>
+                </tr>
 
-                {/* Pagination */}
-                <nav className="text-center mb-5">
-                        <ul className="inline-flex -space-x-px mb-5">
-                                <li>
-                                        <a href="#" className="py-2 px-3 ml-0 leading-tight text-white-500 bg-white rounded-l-lg border bordet-white-300 hover:bt-gray-800 hover:text-gray-500">Previous</a>
-                                </li>
-                                <li>
-                                        <a href="#" className="py-2 px-3 leading-tight text-white-500 bg-white border bordet-white-300 hover:bt-gray-800 hover:text-gray-500">1</a>
-                                </li>
-                                <li>
-                                        <a href="#" className="py-2 px-3 leading-tight text-white-500 bg-white border bordet-white-300 hover:bt-gray-800 hover:text-gray-500">2</a>
-                                </li>
-                                <li>
-                                        <a href="#" aria-current="page" className="py-2 px-3 leading-tight text-white-500 bg-white border bordet-white-300 hover:bt-gray-800 hover:text-gray-500">3</a>
-                                </li>
-                                <li>
-                                        <a href="#" className="py-2 px-3 leading-tight text-white-500 bg-white rounded-r-lg border bordet-white-300 hover:bt-gray-800 hover:text-gray-500">Next</a>
-                                </li>
-                        </ul>
-                </nav>
+                <tr class="bg-gray-100 border-b">
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2</td>
+                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                        Airport
+                </td>
+                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                        Srinagar Airport
+                </td>
+                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                ₹20009
+                </td>
+                </tr>
 
-                <div className="p-2 w-full pt-8 mt-8 border-t bordet-gray-200 text-center"></div>
-        </>
+                <tr class="bg-white border-b">
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">3</td>
+                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                        Travel 
+                </td>
+                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                        Flight
+                </td>
+                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                ₹23000
+                </td>
+                </tr>
+
+                <tr class="bg-gray-300 border-b">
+                <td class=""></td>
+                <td class=""></td>
+                <td class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
+                Final Amount Expense
+                </td>
+                <td class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
+                ₹63009
+                </td>
+                </tr>
+                </tbody>
+                </table>
+        </div>
+        </div>
+        </div>
+        </div>
+
+    </>
 }
 
 export default Information
