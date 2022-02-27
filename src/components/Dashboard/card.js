@@ -1,4 +1,5 @@
 import React from 'react'
+
 function Card({ name, loc, img }) {
     console.log(img)
     return (
