@@ -1,6 +1,18 @@
 import React from 'react'
 
-function Card({ name, maps, img, ratings, price, desc, key }) {
+function Card({ name, maps, img, ratings, price, desc, key, expense, setExpense, type }) {
+    console.log(expense)
+    const handler = () => {
+        const entry = { type, price, name }
+        // if (expense.map((e) => e.name).length != 0) {
+        //     const array = expense.filter(ele => ele.name != name)
+        //     setExpense(array)
+        // }
+        // else {
+        //     setExpense([...expense, entry])
+        // }
+        setExpense([...expense, entry])
+    }
     return <>
         <div className="my-1 px-4 w-sm " key={key}>
             <article className="overflow-hidden rounded-lg shadow-xl p-5">
@@ -17,7 +29,7 @@ function Card({ name, maps, img, ratings, price, desc, key }) {
                     <div className="flex items-center justify-between leading-tight ">
 
                         <label class="flex items-center justify-center mt-3 mb-3">
-                            <input type="checkbox" class="form-checkbox h-5 w-5 text-purple-600" />
+                            <input onChange={handler} type="checkbox" class="form-checkbox h-5 w-5 text-purple-600" />
                         </label>
 
                         <p className="text-grey-darker text-sm">

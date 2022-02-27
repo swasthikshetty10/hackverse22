@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import place from "../../../public/place.jpeg";
 import Card from "./card";
 import { Fade } from "react-awesome-reveal";
@@ -7,6 +7,7 @@ import { Fade } from "react-awesome-reveal";
 
 function Information({ data, hotels, place }) {
         console.log(place)
+        const [expense, setExpense] = useState([])
         return <>
 
                 {/* Location Info */}
@@ -46,20 +47,8 @@ function Information({ data, hotels, place }) {
                                                         console.log(item);
                                                         return <Card
                                                                 key={index}
-                                                                name={item.name}
-                                                                maps="/"
-                                                                img="https://picsum.photos/600/400/?random"
-                                                                desc={item.caption}
-                                                                ratings={random(2, 5)}
-                                                                price={[{ exist: 1, rate: random(2100, 5000) }]}
-                                                        />
-                                                })
-                                        }
-                                        {
-                                                hotels.suggestions[1].entities.map((item, index) => {
-                                                        console.log(item);
-                                                        return <Card
-                                                                key={index}
+                                                                setExpense={setExpense}
+                                                                expense={expense}
                                                                 name={item.name}
                                                                 maps="/"
                                                                 img="https://picsum.photos/600/400/?random"
@@ -71,21 +60,7 @@ function Information({ data, hotels, place }) {
                                         }
 
 
-                                        <Card
-                                                name="Hotel Name"
-                                                maps="/"
-                                                img="https://picsum.photos/600/400/?random"
-                                                ratings="5"
-                                                price={[{ exist: 1, rate: "20000" }]}
-                                        />
 
-                                        <Card
-                                                name="Hotel Name"
-                                                maps="/"
-                                                img="https://picsum.photos/600/400/?random"
-                                                ratings="5"
-                                                price={[{ exist: 1, rate: "20000" }]}
-                                        />
                                 </div>
                         </div>
                 </Fade >
@@ -155,44 +130,21 @@ function Information({ data, hotels, place }) {
                                                         </thead>
 
                                                         <tbody>
-                                                                <tr class="bg-white border-b">
+                                                                {expense.map((ele, idx) => <tr key={idx} class="bg-white border-b">
                                                                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
                                                                         <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                                                                Hotel
+                                                                                {ele.type}
                                                                         </td>
                                                                         <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                                                                Ramesh Restaurant
+                                                                                {ele.name}
                                                                         </td>
                                                                         <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                                                                ₹20000
+                                                                                {ele.price[0].rate}
                                                                         </td>
                                                                 </tr>
+                                                                )}
 
-                                                                <tr class="bg-gray-100 border-b">
-                                                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2</td>
-                                                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                                                                Airport
-                                                                        </td>
-                                                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                                                                Srinagar Airport
-                                                                        </td>
-                                                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                                                                ₹20009
-                                                                        </td>
-                                                                </tr>
 
-                                                                <tr class="bg-white border-b">
-                                                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">3</td>
-                                                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                                                                Travel
-                                                                        </td>
-                                                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                                                                Flight
-                                                                        </td>
-                                                                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                                                                ₹23000
-                                                                        </td>
-                                                                </tr>
 
                                                                 <tr class="bg-gray-300 border-b">
                                                                         <td class=""></td>
@@ -201,7 +153,7 @@ function Information({ data, hotels, place }) {
                                                                                 Final Amount Expense
                                                                         </td>
                                                                         <td class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
-                                                                                ₹63009
+                                                                                {14566}
                                                                         </td>
                                                                 </tr>
                                                         </tbody>
