@@ -1,18 +1,19 @@
-import Image from 'next/image'
-import React from 'react'
-import place from '../../../public/place.jpeg'
-import Card from './card';
+import Image from "next/image";
+import React from "react";
+import place from "../../../public/place.jpeg";
+import Card from "./card";
 import { Fade } from "react-awesome-reveal";
 
-function Information({ data, hotels }) {
-        console.log(hotels)
+
+function Information({ data, hotels, place }) {
+        console.log(place)
         return <>
 
                 {/* Location Info */}
                 <section className="text-gray-600 body-font">
                         <Fade>
-                                <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-                                        <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+                                <div className=" flex px-5 py-24 md:flex-row flex-col justify-center gap-4 items-center">
+                                        <div className="lg:pl-20">
                                                 <img
                                                         src={data.imageUrls ? data.imageUrls[0] : place}
                                                         className="object-cover object-center rounded"
@@ -39,15 +40,36 @@ function Information({ data, hotels }) {
                 <h3 className="text-center text-4xl font-normal leading-normal mt-0 mb-2 text-gray-800">Hotels Nearby</h3>
                 <Fade>
                         <div className="container my-12 mx-auto px-4 md:px-12">
-                                <div className="flex flex-wrap -mx-1 lg:-mx-4">
+                                <div className="grid gap-10 gird-cols-1 sm:gird-cols-2 xl:grid-cols-3">
+                                        {
+                                                hotels.suggestions[1].entities.map((item, index) => {
+                                                        console.log(item);
+                                                        return <Card
+                                                                key={index}
+                                                                name={item.name}
+                                                                maps="/"
+                                                                img="https://picsum.photos/600/400/?random"
+                                                                desc={item.caption}
+                                                                ratings={random(2, 5)}
+                                                                price={[{ exist: 1, rate: random(2100, 5000) }]}
+                                                        />
+                                                })
+                                        }
+                                        {
+                                                hotels.suggestions[1].entities.map((item, index) => {
+                                                        console.log(item);
+                                                        return <Card
+                                                                key={index}
+                                                                name={item.name}
+                                                                maps="/"
+                                                                img="https://picsum.photos/600/400/?random"
+                                                                desc={item.caption}
+                                                                ratings={random(2, 5)}
+                                                                price={[{ exist: 1, rate: random(2100, 5000) }]}
+                                                        />
+                                                })
+                                        }
 
-                                        <Card
-                                                name="Hotel Name"
-                                                maps="/"
-                                                img="https://picsum.photos/600/400/?random"
-                                                ratings="5"
-                                                price={[{ exist: 1, rate: "20000" }]}
-                                        />
 
                                         <Card
                                                 name="Hotel Name"
@@ -73,7 +95,7 @@ function Information({ data, hotels }) {
                 <Fade>
                         <div className="container my-12 mx-auto px-4 md:px-12">
                                 <div className="flex flex-wrap -mx-1 lg:-mx-4">
-                                        <Card
+                                        {/* <Card
                                                 name="Airport Name"
                                                 maps="/"
                                                 img="https://picsum.photos/600/400/?random"
@@ -95,19 +117,13 @@ function Information({ data, hotels }) {
                                                 img="https://picsum.photos/600/400/?random"
                                                 ratings="5"
                                                 price={[{ exist: 0, rate: "" }]}
-                                        />
+                                        /> */}
 
                                 </div>
                         </div>
                 </Fade>
 
-                <Card
-                        name="Aiport Name"
-                        maps="/"
-                        img="https://picsum.photos/600/400/?random"
-                        ratings="5"
-                        price={[{ exist: 0, rate: "" }]}
-                />
+
 
                 {/* Estimated Budget */}
                 <div className="p-2 w-full pt-8 mt-8 border-t bordet-gray-200 text-center"></div>
@@ -196,6 +212,11 @@ function Information({ data, hotels }) {
                 </div>
 
         </>
+
 }
 
-export default Information
+export default Information;
+
+function random(min, max) {
+        return Math.floor((Math.random()) * (max - min + 1)) + min;
+}
