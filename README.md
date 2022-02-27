@@ -28,11 +28,11 @@ Website to plan and estimate Travel budget at few clicks. Search Travel places t
 4. PostgreSQL DB
 
 ### Installation steps
-1. - Fork the [repo](https://github.com/nagarajpandith/live-stream-studio-booking)
+1. - Fork the [repo](https://github.com/swasthikshetty10/hackverse22)
    - Clone the repo to your local system
     ```git
-    git clone https://github.com/nagarajpandith/live-stream-studio-booking.git
-    cd live-stream-studio-booking 
+    git clone https://github.com/swasthikshetty10/hackverse22.git
+    cd hackverse22 
     ```
     
 2. Install latest version of [Nodejs](https://nodejs.org/en/) and install all the dependencies:
@@ -66,7 +66,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
     "tailwindcss": "^3.0.23"
 
 ### Declaration of Previous Work
-This project was planned, started and built only after the Hackathon timer started i.e. 25th Feb, 2022 12.00PM and no work was done earlier.
+This project was planned, started and built only after the Hackathon timer started i.e. 26th Feb, 2022 12.00PM and no work was done earlier.
 
 ### Team Members
 | <img src = "https://avatars.githubusercontent.com/u/62538932?v=4" width="50px"> | <img src = "https://avatars.githubusercontent.com/u/83623339?v=4" width="50px"> | 
