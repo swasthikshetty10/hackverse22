@@ -7,10 +7,12 @@ function Loader() {
     return (
         <div className="flex h-screen justify-center items-center">
         <Fade cascade delay="40"><Slide direction="right">
-        <h3 className="mr-36 text-center text-4xl font-normal leading-normal mt-0 mb-2 text-gray-800">
+        <div className="md:mr-44">
+        <h3 className="text-center text-4xl font-normal leading-normal mt-0 mb-2 text-gray-800">
         MakeMeAfford
         </h3>
-        <a className="mr-36 text-sm hover:text-gray-900">Best travel buddy!</a>
+        <a className="text-sm hover:text-gray-900">Best travel buddy!</a>
+        </div>
         </Slide></Fade>
         < Roll>
         <Image

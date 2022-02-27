@@ -1,34 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">Team Coffee2Code</h1>
+<p align="center"> 
+<img src="https://cdn-icons.flaticon.com/png/512/2200/premium/2200326.png?token=exp=1645938477~hmac=33d9c84fb9727f9287367bae224f543e" alt="LOGO" border="0" width=200 height=200/>&nbsp;</a>
+</p>
 
-## Getting Started
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#makemeafford">Title</a></li>
+    <li><a href="#description">Description</a></li>
+    <li><a href="#tech-stack">Tech Stack</a></li>
+    <li><a href="#installation-steps">Installation Steps</a></li>
+    <li><a href="#declaration-of-previous-work">Declaration of Previous Work</a></li>
+  </ol>
+</details>
 
-First, run the development server:
+### MakeMeAfford
+
+### Description
+Website to plan and estimate Travel budget at few clicks. Search Travel places to get a quick glance of nearest tourist attractions. Also, estimate your expenditure in travlling and libing at a selected destination.
+
+### Tech Stack
+1. Nextjs
+2. Tailwind-CSS
+3. Prisma 
+4. PostgreSQL DB
+
+### Installation steps
+1. - Fork the [repo](https://github.com/nagarajpandith/live-stream-studio-booking)
+   - Clone the repo to your local system
+    ```git
+    git clone https://github.com/nagarajpandith/live-stream-studio-booking.git
+    cd live-stream-studio-booking 
+    ```
+    
+2. Install latest version of [Nodejs](https://nodejs.org/en/) and install all the dependencies:
+```bash
+npm install
+```
+
+3. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the webpage.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Declaration of Previous Work
+This project was planned, started and built only after the Hackathon timer started i.e. 25th Feb, 2022 12.00PM and no work was done earlier.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Team Members
+| <img src = "https://avatars.githubusercontent.com/u/62538932?v=4" width="50px"> | <img src = "https://avatars.githubusercontent.com/u/83623339?v=4" width="50px"> | 
+| :----------------------------------------------------------: | :----------------------------------------------------------: | 
+| [Swasthik Shetty](https://github.com/swasthikshetty10) |  [Nagaraj Pandith](https://github.com/nagarajpandith/)   |
