@@ -80,6 +80,7 @@ function DashboardIndex() {
                         name={item.title}
                         loc={item.address}
                         img={item.imageUrls}
+                        id={item.cid}
                      />
                   </div>)}
 
