@@ -1,45 +1,49 @@
 import React from 'react'
 
-function Card({ name, maps, img, ratings, price }) {
+function Card({ name, maps, img, ratings, price, desc, key }) {
     return <>
-        <div className="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
-        <article className="overflow-hidden rounded-lg shadow-lg">
-        <label class="flex items-center justify-center mt-3 mb-3">
-                <input type="checkbox" class="form-checkbox h-5 w-5 text-purple-600" />
-        </label>
-            <a href={maps}>
-                <img alt="Placeholder" className="block h-auto w-full" src={img} />
-            </a>
+        <div className="my-1 px-4 w-sm " key={key}>
+            <article className="overflow-hidden rounded-lg shadow-xl p-5">
+                <div className='p-2 md:p-3'>
 
-            <header className="flex items-center justify-between leading-tight p-2 md:p-4">
-                <h1 className="text-lg">
-                    <a className="no-underline hover:underline text-black" href="#">
-                        {name}
-                    </a>
-                </h1>
-                <p className="text-grey-darker text-sm">
-                <a href={maps}>
-                    <button className="inline-flex items-center bg-indigo-500 border-0 py-1 px-3 focus:outline-none hover:bg-indigo-600 rounded text-white mt-4 md:mt-0">View on Google Maps</button>
-                </a>
-                </p>
-            </header>
+                    <h1 className="text-lg mb-5">
+                        <a className="no-underline hover:underline text-black" href="#">
+                            {name}
+                        </a>
+                    </h1>
+                    <p className="text-md mb-5">
 
-            <footer className="flex items-center justify-between leading-none p-2 md:p-4">
+                    </p>
+                    <div className="flex items-center justify-between leading-tight ">
+
+                        <label class="flex items-center justify-center mt-3 mb-3">
+                            <input type="checkbox" class="form-checkbox h-5 w-5 text-purple-600" />
+                        </label>
+
+                        <p className="text-grey-darker text-sm">
+                            <a href={maps}>
+                                <button className="inline-flex items-center bg-indigo-500 border-0 py-1 px-3 focus:outline-none hover:bg-indigo-600 rounded text-white mt-4 md:mt-0">View on Google Maps</button>
+                            </a>
+                        </p>
+                    </div>
+
+                </div>
+                <footer className="flex items-center justify-between leading-none p-2 ">
                     {price.map((item, index) => (item.exist ? <div key={index} className=""><a className="flex items-center no-underline hover:underline text-black" href="#">
-                    <img alt="Placeholder" className="block rounded-full" src="https://cdn-icons-png.flaticon.com/512/3462/3462067.png" width="32" height="32" />
-                    <p className="ml-2 text-sm">{item.rate}</p></a></div>
-                    : <div key={index} className=""></div>)
+                        <img alt="Placeholder" className="block rounded-full" src="https://cdn-icons-png.flaticon.com/512/3462/3462067.png" width="32" height="32" />
+                        <p className="ml-2 text-sm">{item.rate}</p></a></div>
+                        : <div key={index} className=""></div>)
                     )}
 
-                <a className="flex items-center no-underline hover:underline text-black" href="#">
-                    <img alt="Placeholder" className="block rounded-full" src="https://cdn-icons.flaticon.com/png/512/477/premium/477406.png?token=exp=1645893778~hmac=afabbff6ef20ce13fd00ff4807b5de2c" width="32" height="32" />
-                    <p className="ml-2 text-sm">
-                        {ratings}
-                    </p>
-                </a>
-            </footer>
+                    <a className="flex items-center no-underline hover:underline text-black" href="#">
+                        <img alt="Placeholder" className="block rounded-full" src="https://cdn.discordapp.com/attachments/929033745422487718/947358772874051634/477406.png" width="32" height="32" />
+                        <p className="ml-2 text-sm">
+                            {ratings}
+                        </p>
+                    </a>
+                </footer>
 
-        </article>
+            </article>
         </div>
 
     </>
