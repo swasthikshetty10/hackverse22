@@ -4,8 +4,8 @@ import place from '../../../public/place.jpeg'
 import Card from './card';
 import { Fade } from "react-awesome-reveal";
 
-function Information({ data }) {
-        console.log(data)
+function Information({ data, hotels }) {
+        console.log(hotels)
         return <>
 
                 {/* Location Info */}

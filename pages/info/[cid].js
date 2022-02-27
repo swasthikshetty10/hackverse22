@@ -5,11 +5,11 @@ import { PrismaClient } from '@prisma/client'
 const axios = require('axios')
 const prisma = new PrismaClient()
 
-function Dashboard({ data }) {
+function Dashboard({ data, hotels }) {
     return (
         <div className=''>
             <NavBar />
-            <Info data={data} />
+            <Info data={data} hotels={hotels} />
         </div>
     )
 }
@@ -23,9 +23,10 @@ export async function getServerSideProps({ params }) {
         }
     })
     const [data] = place[0].data.filter((item) => item.cid)
+    const res = await axios.get(`http://localhost:3000/api/find/hotels/${loc}`)
 
     // Pass data to the page via props
-    return { props: { data } }
+    return { props: { data, hotels: res.data } }
 }
 
 
