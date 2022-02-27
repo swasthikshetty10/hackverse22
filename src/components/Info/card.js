@@ -41,11 +41,11 @@ function Card({ name, maps, img, ratings, price, desc, key, expense, setExpense,
 
                 </div>
                 <footer className="flex items-center justify-between leading-none p-2 ">
-                    {price.map((item, index) => (item.exist ? <div key={index} className=""><a className="flex items-center no-underline hover:underline text-black" href="#">
+                    <div className=""><a className="flex items-center no-underline hover:underline text-black" href="#">
                         <img alt="Placeholder" className="block rounded-full" src="https://cdn-icons-png.flaticon.com/512/3462/3462067.png" width="32" height="32" />
-                        <p className="ml-2 text-sm">{item.rate}</p></a></div>
-                        : <div key={index} className=""></div>)
-                    )}
+                        <p className="ml-2 text-sm">{price}</p></a></div>
+
+
 
                     <a className="flex items-center no-underline hover:underline text-black" href="#">
                         <img alt="Placeholder" className="block rounded-full" src="https://cdn.discordapp.com/attachments/929033745422487718/947358772874051634/477406.png" width="32" height="32" />

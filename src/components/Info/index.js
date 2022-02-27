@@ -54,7 +54,7 @@ function Information({ data, hotels, place }) {
                                                                 img="https://picsum.photos/600/400/?random"
                                                                 desc={item.caption}
                                                                 ratings={random(2, 5)}
-                                                                price={[{ exist: 1, rate: random(2100, 5000) }]}
+                                                                price={random(2100, 5000)}
                                                         />
                                                 })
                                         }
@@ -139,7 +139,7 @@ function Information({ data, hotels, place }) {
                                                                                 {ele.name}
                                                                         </td>
                                                                         <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                                                                {ele.price[0].rate}
+                                                                                {ele.price}
                                                                         </td>
                                                                 </tr>
                                                                 )}
@@ -153,7 +153,7 @@ function Information({ data, hotels, place }) {
                                                                                 Final Amount Expense
                                                                         </td>
                                                                         <td class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
-                                                                                {14566}
+                                                                                <Sum arr={expense} />
                                                                         </td>
                                                                 </tr>
                                                         </tbody>
@@ -171,4 +171,11 @@ export default Information;
 
 function random(min, max) {
         return Math.floor((Math.random()) * (max - min + 1)) + min;
+}
+function Sum({ arr }) {
+        let sum = 0;
+        arr.forEach(element => {
+                sum += arr.price;
+        });
+        return <>{sum}</>
 }
