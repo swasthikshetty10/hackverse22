@@ -15,7 +15,7 @@ function Card({ id, name, loc, img, data }) {
                         <div class="text-gray-600 text-sm leading-relaxed block md:text-xs lg:text-sm">
                             {loc}
                         </div>
-                        <a href={`/info/${id}-mangalore`}>
+                        <a href={`/info/${id}-${loc}`}>
                             <button className="inline-flex items-center bg-indigo-500 border-0 py-1 px-3 focus:outline-none hover:bg-indigo-600 rounded text-white mt-4">Estimate Budget</button>
                         </a>
                     </div>

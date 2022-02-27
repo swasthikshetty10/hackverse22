@@ -16,7 +16,7 @@ export default async function handler(req, res) {
         }
     })
     try {
-        if (getPlace) {
+        if (getPlace.length!=0) {
             res.json(getPlace[0].data)
         }
         else {

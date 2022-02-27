@@ -65,19 +65,11 @@ function Information({ data, hotels, place }) {
                         </div>
                 </Fade >
 
-                {/* Airports Nearby Cards */}
+                {/* Airports Nearby Cards 
                 <h3 className="text-center text-4xl font-normal leading-normal mt-0 mb-2 text-gray-800">Airports Nearby</h3>
                 <Fade>
                         <div className="container my-12 mx-auto px-4 md:px-12">
                                 <div className="flex flex-wrap -mx-1 lg:-mx-4">
-                                        {/* <Card
-                                                name="Airport Name"
-                                                maps="/"
-                                                img="https://picsum.photos/600/400/?random"
-                                                ratings="5"
-                                                price={[{ exist: 0, rate: "" }]}
-                                        />
-
                                         <Card
                                                 name="Airport Name"
                                                 maps="/"
@@ -92,11 +84,19 @@ function Information({ data, hotels, place }) {
                                                 img="https://picsum.photos/600/400/?random"
                                                 ratings="5"
                                                 price={[{ exist: 0, rate: "" }]}
-                                        /> */}
+                                        />
+
+                                        <Card
+                                                name="Airport Name"
+                                                maps="/"
+                                                img="https://picsum.photos/600/400/?random"
+                                                ratings="5"
+                                                price={[{ exist: 0, rate: "" }]}
+                                        /> 
 
                                 </div>
                         </div>
-                </Fade>
+                </Fade> */}
 
 
 
@@ -175,7 +175,8 @@ function random(min, max) {
 function Sum({ arr }) {
         let sum = 0;
         arr.forEach(element => {
-                sum += arr.price;
+                sum += element.price;
         });
+        console.log(sum)
         return <>{sum}</>
 }
