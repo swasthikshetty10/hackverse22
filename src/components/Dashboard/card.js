@@ -1,11 +1,8 @@
 import React from 'react'
-import {Fade} from 'react-awesome-reveal'
-
-function Card({ name, loc, img }) {
+function Card({ id, name, loc, img, data }) {
     console.log(img)
     return (
         <>
-        <Fade cascade>
             <div class="w-full max-w-sm  md:mx-2 mb-4 md:mb-0">
                 <div class="bg-white rounded-lg overflow-hidden shadow relative">{
 
@@ -18,13 +15,12 @@ function Card({ name, loc, img }) {
                         <div class="text-gray-600 text-sm leading-relaxed block md:text-xs lg:text-sm">
                             {loc}
                         </div>
-                        <a href="/info">
+                        <a href={`/info/${id}-mangalore`}>
                             <button className="inline-flex items-center bg-indigo-500 border-0 py-1 px-3 focus:outline-none hover:bg-indigo-600 rounded text-white mt-4">Estimate Budget</button>
                         </a>
                     </div>
                 </div>
             </div>
-            </Fade>
         </>
     )
 }
